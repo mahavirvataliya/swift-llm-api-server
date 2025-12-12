@@ -15,7 +15,7 @@ let package = Package(
     targets: [
         // CLI Server
         .executableTarget(
-            name: "App",
+            name: "ibex",
             dependencies: [
                 .product(name: "Hummingbird", package: "hummingbird"),
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
