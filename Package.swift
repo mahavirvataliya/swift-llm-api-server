@@ -13,6 +13,7 @@ let package = Package(
         .package(url: "https://github.com/ml-explore/mlx-swift-lm", branch: "main"),
     ],
     targets: [
+        // CLI Server
         .executableTarget(
             name: "App",
             dependencies: [
@@ -21,6 +22,15 @@ let package = Package(
                 .product(name: "MLXLLM", package: "mlx-swift-lm"),
                 .product(name: "MLXLMCommon", package: "mlx-swift-lm"),
             ]
+        ),
+        // SwiftUI Desktop App
+        .executableTarget(
+            name: "LLMStudio",
+            dependencies: [
+                .product(name: "MLXLLM", package: "mlx-swift-lm"),
+                .product(name: "MLXLMCommon", package: "mlx-swift-lm"),
+            ],
+            path: "Sources/LLMStudio"
         ),
     ]
 )
