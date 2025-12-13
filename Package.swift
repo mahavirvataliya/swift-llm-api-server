@@ -33,5 +33,16 @@ let package = Package(
             ],
             path: "Sources/LLMStudio"
         ),
+        // macOS Tray App
+        .executableTarget(
+            name: "ibex-tray",
+            dependencies: [
+                .product(name: "Hummingbird", package: "hummingbird"),
+                .product(name: "MLXLLM", package: "mlx-swift-lm"),
+                .product(name: "MLXLMCommon", package: "mlx-swift-lm"),
+                .product(name: "MLXEmbedders", package: "mlx-swift-lm"),
+            ],
+            path: "Sources/TrayApp"
+        ),
     ]
 )
